@@ -166,6 +166,8 @@ function applyInitialView() {
   setView(["cart", "kitchen"].includes(requestedView) ? requestedView : "guest", false);
 }
 
+let kitchenRefreshInterval = null;
+
 async function setView(view, updateUrl = true) {
   const cart = view === "cart";
   const kitchen = view === "kitchen";
@@ -180,10 +182,29 @@ async function setView(view, updateUrl = true) {
     history.pushState({}, "", nextUrl);
   }
 
+  // Auto-Refresh für Koch-Ansicht stoppen wenn wir die Ansicht verlassen
+  if (kitchenRefreshInterval && !kitchen) {
+    clearInterval(kitchenRefreshInterval);
+    kitchenRefreshInterval = null;
+  }
+
   // Bestellungen nur in Koch-Ansicht laden
   if (kitchen) {
     try {
       state.orders = await apiCallWithAuth('/api/orders');
+      
+      // Auto-Refresh: Bestellungen alle 10 Sekunden neu laden
+      if (!kitchenRefreshInterval) {
+        kitchenRefreshInterval = setInterval(async () => {
+          try {
+            const orders = await apiCallWithAuth('/api/orders');
+            state.orders = orders;
+            renderOrders();
+          } catch (error) {
+            console.error('Auto-Refresh Fehler:', error);
+          }
+        }, 10000); // Alle 10 Sekunden
+      }
     } catch (error) {
       if (error.message === 'Authentifizierung fehlgeschlagen') {
         // Zurück zur Gastansicht wenn Authentifizierung fehlschlägt
