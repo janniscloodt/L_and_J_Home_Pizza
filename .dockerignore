@@ -1,0 +1,32 @@
+# Git
+.git
+.gitignore
+
+# Node
+node_modules
+npm-debug.log
+
+# IDE
+.idea
+.vscode
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Dokumentation (nur lokale Entwicklung)
+README.md
+
+# Build-Artefakte
+dist
+build
+
+# Alte Frontend-Dateien (nur im Root)
+app.js
+index.html
+style.css
+menu.json
+.nojekyll

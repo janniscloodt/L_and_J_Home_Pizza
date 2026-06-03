@@ -1,0 +1,30 @@
+# Node
+node_modules/
+npm-debug.log
+package-lock.json
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker
+*.log
+
+# Backend Daten (werden dynamisch generiert)
+backend/data/orders.json
+backend/data/soldOut.json
+
+# Backup-Dateien
+*.tar.gz
+pizza-backup-*.tar.gz
+
+# Environment
+.env
+.env.local
