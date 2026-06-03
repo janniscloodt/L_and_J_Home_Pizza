@@ -3,6 +3,7 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const fs = require('fs').promises;
 const path = require('path');
+const crypto = require('crypto');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -10,6 +11,19 @@ const DATA_DIR = path.join(__dirname, 'data');
 
 // Passwort für Koch-Ansicht
 const KITCHEN_PASSWORD = process.env.KITCHEN_PASSWORD || 'admin123';
+
+// UUID-Generierung (Fallback für ältere Node-Versionen)
+function generateUUID() {
+  if (typeof crypto.randomUUID === 'function') {
+    return crypto.randomUUID();
+  }
+  // Fallback für Node < 14.17
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+    const r = Math.random() * 16 | 0;
+    const v = c === 'x' ? r : (r & 0x3 | 0x8);
+    return v.toString(16);
+  });
+}
 
 // Middleware
 app.use(cors());
@@ -113,7 +127,7 @@ app.post('/api/orders', async (req, res) => {
     }
 
     // ID und Zeitstempel hinzufügen
-    newOrder.id = crypto.randomUUID ? crypto.randomUUID() : Date.now().toString();
+    newOrder.id = generateUUID();
     newOrder.createdAt = new Date().toISOString();
     newOrder.status = 'open';
 
