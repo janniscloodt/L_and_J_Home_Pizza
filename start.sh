@@ -11,9 +11,9 @@ if ! docker info > /dev/null 2>&1; then
     exit 1
 fi
 
-# Prüfe ob docker-compose verfügbar ist
-if ! command -v docker-compose &> /dev/null; then
-    echo "❌ docker-compose nicht gefunden. Bitte installieren."
+# Prüfe ob docker compose verfügbar ist
+if ! command -v docker compose &> /dev/null; then
+    echo "❌ docker compose nicht gefunden. Bitte installieren."
     exit 1
 fi
 
@@ -22,7 +22,7 @@ echo ""
 
 # Starte Container
 echo "🚀 Starte Container..."
-docker-compose up -d --build
+docker compose up -d --build
 
 # Warte kurz
 sleep 3
@@ -30,7 +30,7 @@ sleep 3
 # Zeige Status
 echo ""
 echo "📊 Container-Status:"
-docker-compose ps
+docker compose ps
 
 echo ""
 echo "✅ System läuft!"
@@ -42,7 +42,7 @@ echo ""
 echo "🔒 Koch-Ansicht Passwort: admin123"
 echo ""
 echo "💡 Befehle:"
-echo "   Logs anzeigen:     docker-compose logs -f"
-echo "   System stoppen:    docker-compose down"
-echo "   System neustarten: docker-compose restart"
+echo "   Logs anzeigen:     docker compose logs -f"
+echo "   System stoppen:    docker compose down"
+echo "   System neustarten: docker compose restart"
 echo ""
