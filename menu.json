@@ -1,0 +1,130 @@
+{
+  "ingredients": [
+    "Tomatensoße",
+    "Käse",
+    "Feta",
+    "Spinat",
+    "Pilze",
+    "Aubergine",
+    "Schinken",
+    "Brie",
+    "Tunfisch",
+    "Rote Zwiebel",
+    "Zucchini",
+    "Oliven"
+  ],
+  "categories": [
+    {
+      "id": "pizza",
+      "name": "Pizza",
+      "items": [
+        {
+          "id": "pizza-margherita",
+          "name": "Pizza Margherita",
+          "description": "Klassisch mit Tomatensoße und Käse.",
+          "price": 6.5,
+          "ingredients": ["Tomatensoße", "Käse"],
+          "soldOut": false
+        },
+        {
+          "id": "pizza-spinaci",
+          "name": "Pizza Spinaci",
+          "description": "Mit Spinat, Feta und roten Zwiebeln.",
+          "price": 8.5,
+          "ingredients": ["Tomatensoße", "Käse", "Spinat", "Feta", "Rote Zwiebel"],
+          "soldOut": false
+        },
+        {
+          "id": "pizza-funghi",
+          "name": "Pizza Funghi",
+          "description": "Mit frischen Pilzen und Käse.",
+          "price": 7.5,
+          "ingredients": ["Tomatensoße", "Käse", "Pilze"],
+          "soldOut": false
+        },
+        {
+          "id": "pizza-verdura",
+          "name": "Pizza Verdura",
+          "description": "Vegetarisch mit Aubergine, Zucchini, Pilzen und Oliven.",
+          "price": 9.5,
+          "ingredients": ["Tomatensoße", "Käse", "Aubergine", "Zucchini", "Pilze", "Oliven"],
+          "soldOut": false
+        },
+        {
+          "id": "pizza-prosciutto",
+          "name": "Pizza Prosciutto",
+          "description": "Mit Schinken und Käse.",
+          "price": 8.5,
+          "ingredients": ["Tomatensoße", "Käse", "Schinken"],
+          "soldOut": false
+        },
+        {
+          "id": "pizza-tonno",
+          "name": "Pizza Tonno",
+          "description": "Mit Tunfisch und roten Zwiebeln.",
+          "price": 9,
+          "ingredients": ["Tomatensoße", "Käse", "Tunfisch", "Rote Zwiebel"],
+          "soldOut": false
+        },
+        {
+          "id": "pizza-brie",
+          "name": "Pizza Brie Deluxe",
+          "description": "Cremig mit Brie, Pilzen und roten Zwiebeln.",
+          "price": 9.5,
+          "ingredients": ["Tomatensoße", "Käse", "Brie", "Pilze", "Rote Zwiebel"],
+          "soldOut": false
+        },
+        {
+          "id": "pizza-custom",
+          "name": "Wunschpizza",
+          "description": "Stelle deine eigene Pizza aus den vorhandenen Zutaten zusammen.",
+          "price": 7,
+          "pricePerExtraIngredient": 0.75,
+          "customizable": true,
+          "ingredients": ["Tomatensoße", "Käse"],
+          "soldOut": false
+        }
+      ]
+    },
+    {
+      "id": "drinks",
+      "name": "Getränke",
+      "items": [
+        {
+          "id": "drink-cola",
+          "name": "Cola",
+          "description": "Erfrischendes Kaltgetränk.",
+          "price": 2,
+          "soldOut": false
+        },
+        {
+          "id": "drink-water",
+          "name": "Wasser",
+          "description": "Still oder sprudelnd.",
+          "price": 1.5,
+          "soldOut": false
+        },
+        {
+          "id": "drink-lemonade",
+          "name": "Limonade",
+          "description": "Fruchtig und süß.",
+          "price": 2,
+          "soldOut": false
+        }
+      ]
+    },
+    {
+      "id": "dessert",
+      "name": "Nachtisch",
+      "items": [
+        {
+          "id": "dessert-tiramisu",
+          "name": "Tiramisu",
+          "description": "Klassischer italienischer Nachtisch.",
+          "price": 3.5,
+          "soldOut": false
+        }
+      ]
+    }
+  ]
+}
