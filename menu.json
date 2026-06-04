@@ -110,6 +110,13 @@
           "description": "Fruchtig und süß.",
           "price": 2,
           "soldOut": false
+        },
+        {
+          "id": "drink-matilde-gb",
+          "name": "Matilde Grauburgunder",
+          "description": "Fruchtig und süß.",
+          "price": 2,
+          "soldOut": false
         }
       ]
     },

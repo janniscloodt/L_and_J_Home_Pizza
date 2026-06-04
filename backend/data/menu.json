@@ -92,14 +92,14 @@
       "items": [
         {
           "id": "drink-grauburgunder",
-          "name": "Matilde Grauburgunder",
+          "name": "Mathilde Grauburgunder",
           "description": "Eleganter Weißwein mit feiner Frucht, Aromen von Birne und Apfel. Frisch und harmonisch.",
           "price": 6.5,
           "soldOut": false
         },
         {
           "id": "drink-riesling-sekt",
-          "name": "Riesling Sekt",
+          "name": "Riesling Sekt (Metternich)",
           "description": "Prickelnder Sekt mit fruchtigen Noten von Pfirsich und Zitrus. Erfrischend und belebend.",
           "price": 7,
           "soldOut": false
@@ -107,7 +107,7 @@
         {
           "id": "drink-bier",
           "name": "Bier",
-          "description": "Kühles Bier vom Fass. Erfrischend und perfekt zur Pizza.",
+          "description": "Kühles Helles aus Bayern. Erfrischend und perfekt zur Pizza.",
           "price": 3.5,
           "soldOut": false
         },
@@ -120,16 +120,30 @@
         },
         {
           "id": "drink-pfaffmann",
-          "name": "Karl Pfaffmann Wein",
+          "name": "Karl Pfaffmann Riesling",
           "description": "Qualitätswein aus der Pfalz. Vollmundig mit ausgewogenem Charakter.",
           "price": 6.5,
           "soldOut": false
         },
         {
           "id": "drink-rioja",
-          "name": "Rioja Wein",
+          "name": "Club Privado - Rioja",
           "description": "Spanischer Rotwein mit Noten von Kirsche, Vanille und Eichenholz. Kräftig und würzig.",
           "price": 7.5,
+          "soldOut": false
+        },
+        {
+          "id": "drink-wasser",
+          "name": "Wasser",
+          "description": "Der Klassiker!",
+          "price": 2.5,
+          "soldOut": false
+        },
+        {
+          "id": "drink-mate",
+          "name": "Zuckerfreie Mate Limonade",
+          "description": "Erfrischende süße Mate als Limonade.",
+          "price": 2.5,
           "soldOut": false
         }
       ]
