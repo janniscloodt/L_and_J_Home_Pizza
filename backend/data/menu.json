@@ -155,7 +155,14 @@
         {
           "id": "dessert-tiramisu",
           "name": "Tiramisu",
-          "description": "Klassischer italienischer Nachtisch.",
+          "description": "Klassischer italienischer Nachtisch. (Mit Alkohol)",
+          "price": 4.5,
+          "soldOut": false
+        },
+        {
+          "id": "dessert-muffin",
+          "name": "Chocolate Chip Muffin",
+          "description": "Leckerer Vanille-Muffin mit Schokoladenstückchen.",
           "price": 3.5,
           "soldOut": false
         }
