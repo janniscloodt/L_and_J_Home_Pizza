@@ -19,6 +19,14 @@
       "name": "Pizza",
       "items": [
         {
+          "id": "pizza-marinara",
+          "name": "Pizza Marinara",
+          "description": "Mit Tomatensoße.",
+          "price": 5.5,
+          "ingredients": ["Tomatensoße"],
+          "soldOut": false
+        },
+        {
           "id": "pizza-margherita",
           "name": "Pizza Margherita",
           "description": "Klassisch mit Tomatensoße und Käse.",
