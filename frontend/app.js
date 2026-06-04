@@ -268,7 +268,7 @@ function renderMenu() {
       <article class="menu-card ${soldOut ? "is-sold-out" : ""}">
         <div class="card-main">
           <div>
-            <p class="card-kicker">${soldOut ? "Ausverkauft" : "Verfuegbar"}</p>
+            <p class="card-kicker">${soldOut ? "Ausverkauft" : "Verfügbar"}</p>
             <h3>${escapeHtml(item.name)}</h3>
           </div>
           <span class="price-pill">${freePrice}</span>
@@ -278,7 +278,7 @@ function renderMenu() {
         <div class="card-actions">
           ${item.customizable ? `<button class="secondary-button" type="button" data-custom="${item.id}" ${soldOut ? "disabled" : ""}>Zutaten waehlen</button>` : ""}
           <button class="primary-button" type="button" data-add="${item.id}" ${soldOut ? "disabled" : ""}>
-            ${soldOut ? "Nicht bestellbar" : "Hinzufuegen"}
+            ${soldOut ? "Nicht bestellbar" : "Hinzufügen"}
           </button>
         </div>
         ${item.customizable ? `<div class="custom-target" id="custom-${item.id}"></div>` : ""}
@@ -345,7 +345,7 @@ function showCustomPizzaForm(item) {
 function addToCart(cartItem) {
   state.cart.push(cartItem);
   renderCart();
-  showToast(`${cartItem.baseName} wurde hinzugefuegt.`);
+  showToast(`${cartItem.baseName} wurde hinzugefügt.`);
 }
 
 function createCartItem(item, override = {}) {
@@ -362,7 +362,7 @@ function createCartItem(item, override = {}) {
 
 function renderCart() {
   elements.cartCount.textContent = String(state.cart.length);
-  elements.cartFab.setAttribute("aria-label", `Warenkorb oeffnen, ${state.cart.length} Artikel`);
+  elements.cartFab.setAttribute("aria-label", `Warenkorb öffnen, ${state.cart.length} Artikel`);
 
   if (!state.cart.length) {
     elements.cartList.innerHTML = `<p class="empty-state">Noch nichts im Warenkorb.</p>`;
