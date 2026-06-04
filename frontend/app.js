@@ -437,7 +437,19 @@ function renderOrders() {
 
   elements.ordersList.innerHTML = state.orders.map((order) => {
     const date = new Date(order.createdAt);
-    const items = order.items.map((item) => `<li>${escapeHtml(item.name)}</li>`).join("");
+    const items = order.items.map((item) => {
+  const ingredients = item.ingredients?.length
+    ? item.ingredients.join(", ")
+    : "Keine Zutaten angegeben";
+
+  return `
+    <li>
+      <strong>${escapeHtml(item.name)}</strong>
+      <br>
+      <small>Zutaten: ${escapeHtml(ingredients)}</small>
+    </li>
+  `;
+}).join("");
 
     return `
       <article class="order-card ${order.status === "done" ? "is-done" : ""}">
