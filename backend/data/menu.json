@@ -91,24 +91,45 @@
       "name": "Getränke",
       "items": [
         {
-          "id": "drink-cola",
-          "name": "Cola",
-          "description": "Erfrischendes Kaltgetränk.",
-          "price": 2,
+          "id": "drink-grauburgunder",
+          "name": "Matilde Grauburgunder",
+          "description": "Eleganter Weißwein mit feiner Frucht, Aromen von Birne und Apfel. Frisch und harmonisch.",
+          "price": 6.5,
           "soldOut": false
         },
         {
-          "id": "drink-water",
-          "name": "Wasser",
-          "description": "Still oder sprudelnd.",
-          "price": 1.5,
+          "id": "drink-riesling-sekt",
+          "name": "Riesling Sekt",
+          "description": "Prickelnder Sekt mit fruchtigen Noten von Pfirsich und Zitrus. Erfrischend und belebend.",
+          "price": 7,
           "soldOut": false
         },
         {
-          "id": "drink-lemonade",
-          "name": "Limonade",
-          "description": "Fruchtig und süß.",
-          "price": 2,
+          "id": "drink-bier",
+          "name": "Bier",
+          "description": "Kühles Bier vom Fass. Erfrischend und perfekt zur Pizza.",
+          "price": 3.5,
+          "soldOut": false
+        },
+        {
+          "id": "drink-rose-syrah",
+          "name": "Rosé de Syrah",
+          "description": "Fruchtiger Roséwein mit Aromen von roten Beeren und Melone. Leicht und sommerlich.",
+          "price": 6,
+          "soldOut": false
+        },
+        {
+          "id": "drink-pfaffmann",
+          "name": "Karl Pfaffmann Wein",
+          "description": "Qualitätswein aus der Pfalz. Vollmundig mit ausgewogenem Charakter.",
+          "price": 6.5,
+          "soldOut": false
+        },
+        {
+          "id": "drink-rioja",
+          "name": "Rioja Wein",
+          "description": "Spanischer Rotwein mit Noten von Kirsche, Vanille und Eichenholz. Kräftig und würzig.",
+          "price": 7.5,
           "soldOut": false
         }
       ]
