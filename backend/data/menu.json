@@ -141,8 +141,8 @@
         },
         {
           "id": "drink-mate",
-          "name": "Zuckerfreie Mate Limonade",
-          "description": "Erfrischende süße Mate als Limonade.",
+          "name": "Mate Limonade",
+          "description": "Erfrischende Mate als süße Limonade.",
           "price": 2.5,
           "soldOut": false
         }
@@ -153,8 +153,15 @@
       "name": "Nachtisch",
       "items": [
         {
-          "id": "dessert-tiramisu",
-          "name": "Tiramisu",
+          "id": "dessert-tiramisu-small",
+          "name": "Tiramisu (klein)",
+          "description": "Klassischer italienischer Nachtisch. (Mit Alkohol)",
+          "price": 4.5,
+          "soldOut": false
+        },
+                {
+          "id": "dessert-tiramisu-grande",
+          "name": "Tiramisu (groß)",
           "description": "Klassischer italienischer Nachtisch. (Mit Alkohol)",
           "price": 4.5,
           "soldOut": false
