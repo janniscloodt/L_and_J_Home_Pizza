@@ -171,49 +171,44 @@ let kitchenRefreshInterval = null;
 async function setView(view, updateUrl = true) {
   const cart = view === "cart";
   const kitchen = view === "kitchen";
+
+  if (kitchen) {
+    try {
+      state.orders = await apiCallWithAuth('/api/orders');
+    } catch (error) {
+      setView("guest");
+      return;
+    }
+  }
+
   elements.guestView.hidden = cart || kitchen;
   elements.cartView.hidden = !cart;
   elements.kitchenView.hidden = !kitchen;
   elements.cartFab.hidden = kitchen || cart;
-  elements.viewToggle.setAttribute("aria-label", kitchen ? "Zur Gastansicht wechseln" : "Zur Kochansicht wechseln");
+  elements.viewToggle.setAttribute(
+    "aria-label",
+    kitchen ? "Zur Gastansicht wechseln" : "Zur Kochansicht wechseln"
+  );
 
   if (updateUrl) {
     const nextUrl = getViewUrl(view);
     history.pushState({}, "", nextUrl);
   }
 
-  // Auto-Refresh für Koch-Ansicht stoppen wenn wir die Ansicht verlassen
   if (kitchenRefreshInterval && !kitchen) {
     clearInterval(kitchenRefreshInterval);
     kitchenRefreshInterval = null;
   }
 
-  // Bestellungen nur in Koch-Ansicht laden
-  if (kitchen) {
-    try {
-      state.orders = await apiCallWithAuth('/api/orders');
-      
-      // Auto-Refresh: Bestellungen alle 10 Sekunden neu laden
-      if (!kitchenRefreshInterval) {
-        kitchenRefreshInterval = setInterval(async () => {
-          try {
-            const orders = await apiCallWithAuth('/api/orders');
-            state.orders = orders;
-            renderOrders();
-          } catch (error) {
-            console.error('Auto-Refresh Fehler:', error);
-          }
-        }, 10000); // Alle 10 Sekunden
+  if (kitchen && !kitchenRefreshInterval) {
+    kitchenRefreshInterval = setInterval(async () => {
+      try {
+        state.orders = await apiCallWithAuth('/api/orders');
+        renderOrders();
+      } catch (error) {
+        console.error('Auto-Refresh Fehler:', error);
       }
-    } catch (error) {
-      if (error.message === 'Authentifizierung fehlgeschlagen') {
-        // Zurück zur Gastansicht wenn Authentifizierung fehlschlägt
-        setView('guest');
-        return;
-      }
-      console.error('Fehler beim Laden der Bestellungen:', error);
-      state.orders = [];
-    }
+    }, 10000);
   }
 
   render();
